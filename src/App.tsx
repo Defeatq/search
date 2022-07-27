@@ -3,7 +3,7 @@ import { useState } from "react";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Results from "./components/Results";
-import RoutePaths from "./components/Router";
+import RoutePaths from "./components/RoutePaths";
 
 function App() {
   const [darkTheme, setDarkTheme] = useState<boolean>(false);
