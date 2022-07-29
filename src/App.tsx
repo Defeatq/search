@@ -6,7 +6,7 @@ import Results from "./components/Results";
 import RoutePaths from "./components/RoutePaths";
 
 function App() {
-  const [darkTheme, setDarkTheme] = useState<boolean>(false);
+  const [darkTheme, setDarkTheme] = useState<boolean>(true);
 
   return (
     <div className={ darkTheme ? 'dark' : '' }>
