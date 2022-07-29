@@ -3,7 +3,7 @@ import Results from "./Results";
 
 function RoutePaths() {
   return (
-    <div>
+    <div className="max-w-full">
       <Routes>
         <Route path="*" element={ 
           <Navigate to="/search" replace={ true }/>
