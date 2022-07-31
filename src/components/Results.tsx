@@ -12,6 +12,7 @@ function Results() {
   const context = useResultContext();
 
   const path = locations.pathname;
+  const results = context?.results;
 
   useEffect(() => {
     context?.fetchResults(path);
@@ -20,11 +21,11 @@ function Results() {
   switch (path) {
     case '/search':
       return (
-        <All results={ context?.results } />
+        <All results={ results } />
       )
     case '/news':
       return (
-        <News results={ null } />
+        <News results={ results } />
       )
     case '/images':
       return (

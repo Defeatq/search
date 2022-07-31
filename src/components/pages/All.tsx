@@ -1,16 +1,16 @@
-type Results = {
-  results?: Result[];
-};
-
-type Props = {
-  results: Results | null | undefined,
-};
-
 interface Result {
   title: string,
   link: string,
   description: string,
-};
+}
+
+type Results = {
+  results?: Result[];
+}
+
+type Props = {
+  results: Results | null | undefined,
+}
 
 function All(props: Props) {
   const results = props.results;
@@ -21,7 +21,7 @@ function All(props: Props) {
       <div className="flex flex-wrap justify-between items-start gap-y-6">
         {
           resultsArray?.map((result, index) => 
-            <a key={ index } href={ result.link } className="flex flex-col md:w-2/5 w-full">
+            <a key={ index } href={ result.link } target="_blank" className="flex flex-col md:w-2/5 w-full">
               <p className="break-words dark:text-gray-200 text-gray-900">
                 { result.link }
               </p>
