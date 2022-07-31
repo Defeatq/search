@@ -1,4 +1,10 @@
-import { Children, createContext, ReactNode, useState } from "react";
+import { 
+  Children, 
+  createContext, 
+  ReactNode, 
+  useContext, 
+  useState 
+} from "react";
 
 import options from "../options";
 import URLS from "../URLS";
@@ -42,3 +48,5 @@ function RequestResultsContextProvider(props: Props) {
 }
 
 export default RequestResultsContextProvider;
+
+export const useResultContext = () => useContext(RequestResultsContext);
