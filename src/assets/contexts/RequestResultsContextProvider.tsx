@@ -9,10 +9,9 @@ import {
 import options from "../options";
 import URLS from "../URLS";
 
-
 interface ResultsContext {
   fetchResults: (path: string) => void,
-  results: object | null,
+  results: {} | null,
   searchingValue: string,
   setSearchingValue: (searchingValue: string) => void,
 }
@@ -24,7 +23,7 @@ type Props = {
 const RequestResultsContext = createContext<ResultsContext | null>(null);
 
 function RequestResultsContextProvider(props: Props) {
-  const [results, setResults] = useState<object | null>(null);
+  const [results, setResults] = useState<{} | null>(null);
   const [searchingValue, setSearchingValue] = useState<string>('');
 
   const fetchResults = async (path: string) => {
