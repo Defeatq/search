@@ -1,26 +1,34 @@
+import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { useResultContext } from "../assets/contexts/RequestResultsContextProvider";
 
 import All from "./pages/All";
 import Images from "./pages/Images";
 import News from "./pages/News";
 import Videos from "./pages/Videos";
 
-
 function Results() {
   const locations = useLocation();
+  const context = useResultContext();
 
-  switch (locations.pathname) {
+  const path = locations.pathname;
+
+  useEffect(() => {
+    context?.fetchResults(path);
+  }, [path]);
+
+  switch (path) {
     case '/search':
       return (
-        <All />
+        <All results={ context?.results } />
       )
     case '/news':
       return (
-        <News />
+        <News results={ null } />
       )
     case '/images':
       return (
-        <Images />
+        <Images results={ null } />
       )
     case '/videos':
       return (
