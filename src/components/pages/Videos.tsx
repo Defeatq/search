@@ -22,7 +22,7 @@ function Videos(props: Props) {
         videos?.map((video, index) => 
           video.link.includes('www.youtube.com') ?
           (<div key={ index } className="p-3">
-            <ReactPlayer url={ video.link } controls width="355px" height="200px"/>
+            <ReactPlayer url={ video.link } controls width="295px" height="180px"/>
           </div>) : 
           <></>
         )

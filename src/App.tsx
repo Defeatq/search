@@ -12,7 +12,7 @@ function App() {
   return (
     <RequestResultsContextProvider>
       <div className={ darkTheme ? 'dark' : '' }>
-        <div className="bg-gray-100 dark:bg-gray-900 text-black dark:text-white min-h-screen">
+        <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-black dark:text-white">
           <Header darkTheme={ darkTheme } setDarkTheme={ setDarkTheme } />
           <RoutePaths />
           <Footer />
