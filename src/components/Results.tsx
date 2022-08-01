@@ -27,11 +27,11 @@ function Results() {
       return (
         <News results={ results } />
       )
-    case '/images':
+    case '/image':
       return (
-        <Images results={ null } />
+        <Images results={ results } />
       )
-    case '/videos':
+    case '/video':
       return (
         <Videos />
       )
