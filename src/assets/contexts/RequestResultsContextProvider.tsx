@@ -14,6 +14,7 @@ interface ResultsContext {
   results: {} | null,
   searchingValue: string,
   setSearchingValue: (searchingValue: string) => void,
+  loading: boolean,
 }
 
 type Props = {
@@ -25,20 +26,25 @@ const RequestResultsContext = createContext<ResultsContext | null>(null);
 function RequestResultsContextProvider(props: Props) {
   const [results, setResults] = useState<{} | null>(null);
   const [searchingValue, setSearchingValue] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(false);
 
   const fetchResults = async (path: string) => {
     try {
+      setLoading(true);
+
       const response = await fetch(`${ URLS.GOOGLE_SEARCH }${ path }/q=elon+musk`, options);
       const json = await response.json();
 
       setResults(json);
+
+      setLoading(false);
     } catch(error) {
       console.log(error);
     }
   } 
 
   return (
-    <RequestResultsContext.Provider value={{ fetchResults, results, searchingValue, setSearchingValue }}>
+    <RequestResultsContext.Provider value={{ fetchResults, results, searchingValue, setSearchingValue, loading }}>
       <>
       { props.children }
       </>
