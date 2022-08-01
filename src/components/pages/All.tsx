@@ -1,7 +1,13 @@
+import cutString from "../../assets/helpers/cutString";
+
 interface Result {
   title: string,
   link: string,
   description: string,
+  cite: {
+    domain: string,
+    span: string,
+  }
 }
 
 type Results = {
@@ -23,7 +29,9 @@ function All(props: Props) {
           resultsArray?.map((result, index) => 
             <a key={ index } href={ result.link } target="_blank" className="flex flex-col md:w-2/5 w-full">
               <p className="break-words dark:text-gray-200 text-gray-900">
-                { result.link }
+                { 
+                  result.cite.domain ? cutString(result.cite.domain, 35) : cutString(result.link, 35)
+                }
               </p>
               <p className="break-words text-xl dark:text-blue-300 text-blue-600 hover:underline">
                 { result.title }
