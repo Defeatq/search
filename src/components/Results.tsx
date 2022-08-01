@@ -33,7 +33,7 @@ function Results() {
       )
     case '/video':
       return (
-        <Videos />
+        <Videos results={ results } />
       )
     default:
       return (
