@@ -18,10 +18,10 @@ function RoutePaths() {
           <Route path="news" element={ 
             <Results />
           }/>
-          <Route path="images" element={ 
+          <Route path="image" element={ 
             <Results />
           }/>
-          <Route path="videos" element={ 
+          <Route path="video" element={ 
             <Results />
           }/>
         </Route>
