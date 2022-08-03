@@ -16,10 +16,11 @@ function Results() {
   const path = locations.pathname;
   const results = context?.results;
   const loading = context?.loading;
+  const searchingValue = context?.searchingValue;
 
-  // useEffect(() => {
-  //   context?.fetchResults(path);
-  // }, [path]);
+  useEffect(() => {
+    context?.fetchResults(path);
+  }, [path, searchingValue]);
 
   if (loading) {
     return (
