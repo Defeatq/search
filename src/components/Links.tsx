@@ -10,7 +10,7 @@ const LINKS = [
 function Links() {
   return (
     <nav className="w-full">
-      <ul className="flex justify-around items-center flex-wrap">
+      <ul className="flex justify-center items-center flex-wrap">
         {
           LINKS.map((link, index) => 
             <li key={ index } className="mt-4 mx-4 mb-2">
