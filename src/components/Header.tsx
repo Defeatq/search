@@ -1,4 +1,9 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
+
+import { useResultContext } from "../assets/contexts/RequestResultsContextProvider";
+
+import Navbar from "./Navbar";
 
 type Props = {
   darkTheme: boolean,
@@ -6,6 +11,12 @@ type Props = {
 }
 
 function Header({ darkTheme, setDarkTheme }: Props) {
+  const context = useResultContext();
+
+  useEffect(() => {
+    console.log(context)
+  }, [darkTheme])
+
   return (
     <div className="flex flex-row flex-wrap justify-center items-center p-4 pb-0 mb-6 border-b border-gray-300 dark:border-gray-700">
       <div className="flex justify-between items-center w-screen">
@@ -18,6 +29,7 @@ function Header({ darkTheme, setDarkTheme }: Props) {
           { darkTheme ? 'Light' : 'Dark' }
         </button>
       </div>
+      <Navbar />
     </div>
   )
 }
