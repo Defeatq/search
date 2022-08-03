@@ -5,8 +5,8 @@ function Loader() {
     <div className="flex flex-wrap justify-between items-start">
       <div className="mx-auto">
         <Oval
-          height={ 80 }
-          width={ 80 }
+          height={ 60 }
+          width={ 60 }
           color="#4fa94d"
           wrapperStyle={ {} }
           wrapperClass=""
