@@ -18,7 +18,7 @@ function Search() {
   }, [debouncedText]);
 
   return (
-    <form className="-mt-10 w-96">
+    <form className="-mt-10 sm:w-96 w-48">
       <input 
         type="search"
         value={ text }
