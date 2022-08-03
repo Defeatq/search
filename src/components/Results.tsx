@@ -1,12 +1,13 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+
 import { useResultContext } from "../assets/contexts/RequestResultsContextProvider";
-import Loader from "./Loader";
 
 import All from "./pages/All";
 import Images from "./pages/Images";
 import News from "./pages/News";
 import Videos from "./pages/Videos";
+import Loader from "./Loader";
 
 function Results() {
   const locations = useLocation();
@@ -16,9 +17,9 @@ function Results() {
   const results = context?.results;
   const loading = context?.loading;
 
-  useEffect(() => {
-    context?.fetchResults(path);
-  }, [path]);
+  // useEffect(() => {
+  //   context?.fetchResults(path);
+  // }, [path]);
 
   if (loading) {
     return (
