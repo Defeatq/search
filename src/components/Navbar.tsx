@@ -3,7 +3,7 @@ import Search from "./Search";
 
 function Navbar() {
   return (
-    <div className="">
+    <div className="flex flex-col justify-center items-center">
       <Search />
       <Links />
     </div>
