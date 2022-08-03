@@ -32,7 +32,7 @@ function RequestResultsContextProvider(props: Props) {
     try {
       setLoading(true);
 
-      const response = await fetch(`${ URLS.GOOGLE_SEARCH }${ path }/q=elon+musk`, options);
+      const response = await fetch(`${ URLS.GOOGLE_SEARCH }${ path }/q=${ encodeURIComponent(searchingValue) }`, options);
       const json = await response.json();
 
       setResults(json);
